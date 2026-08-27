@@ -1,6 +1,8 @@
 # Orbita
 This project is a ROS Noetic package designed to control a 3-axis robotic actuator (a spherical mechanism/head, named Orbita) synchronized with a 3D LiDAR (Ouster OS0) and an elevation mapping system (intended to be fead to a RL policy).
 
+**[User manual](https://github.com/joschmaCYU/Orbita-Mitacs/blob/main/USER_MANUAL.md)**
+
  ### 1. Low-Level & Embedded Control
   - FullReplacement.ino: 
     - Inverse Kinematics: Computes motor disk angles from a 3D orientation target (Yaw/Pitch/Roll using quaternions).
