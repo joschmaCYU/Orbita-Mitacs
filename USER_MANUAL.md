@@ -28,18 +28,18 @@ flowchart TD
     end
 
     %% Network & Serial
-    LiDAR -->|Point Cloud Data| OusterDriver
-    OusterDriver -->|/ouster/points| RelayNode
+    LiDAR -->|"Point Cloud Data"| OusterDriver
+    OusterDriver -->|"/ouster/points"| RelayNode
     RelayNode -.-> MapperNode
-    MapperNode -->|Recorded 50Hz Grids| CSVFile
+    MapperNode -->|"Recorded 50Hz Grids"| CSVFile
     
-    UserCmd -->|geometry_msgs/Vector3 (Yaw, Pitch, Roll)| SerialNode
-    SerialNode <-->|UART / USB Serial (/dev/ttyACM0)| MCU
+    UserCmd -->|"geometry_msgs/Vector3 (Yaw, Pitch, Roll)"| SerialNode
+    SerialNode <-->|"UART / USB Serial (/dev/ttyACM0)"| MCU
 
-    MCU -->|SPI Bus| Encoders
-    MCU -->|PWM / Direction| Motors
+    MCU -->|"SPI Bus"| Encoders
+    MCU -->|"PWM / Direction"| Motors
     Motors --> OrbitaMech
-    MCU -->|/motor Telemetry (50Hz)| SerialNode
+    MCU -->|"/motor Telemetry (50Hz)"| SerialNode
     SerialNode --> Viz
     OusterDriver --> Viz
 ```
