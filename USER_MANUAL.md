@@ -5,7 +5,6 @@ This guide covers setup, calibration, deployment, and operation of the **Orbita*
 ---
 
 ## 1. System Architecture
-
 ```mermaid
 flowchart TD
     subgraph Host["Host Machine / Docker (ROS Noetic)"]
@@ -45,8 +44,6 @@ flowchart TD
     OusterDriver --> Viz
 ```
 
----
-
 ## 2. Hardware Requirements & Wiring
 
 ### Hardware Components
@@ -70,8 +67,7 @@ flowchart TD
 ---
 
 ## 3. Environment Setup (Docker)
-
-The project is pre-configured inside a Docker container running **ROS Noetic** and required dependencies (`ouster-ros`, `elevation_mapping`, `rosserial`, `onnxruntime`).
+The project is pre-configured inside a Docker container running **ROS Noetic** 
 
 ### 3.1 Build the Docker Image
 From the repository root:
@@ -105,6 +101,8 @@ docker run -it \
 * **Open another shell:** `docker exec -it ros_ouster_sync bash`
 * **Stop container:** `docker stop ros_ouster_sync`
 
+> [!WARNING]
+> Always connect USB **before** starting the container
 ---
 
 ## 4. Flashing STM32 Firmware & Generating ROS Libraries
